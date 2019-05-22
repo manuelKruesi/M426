@@ -12,20 +12,32 @@ class AlterReservation extends Controller
   * @param  int  $id
   * @return Response
   */
-  public function handleRequest($reservationId,$)
+  public function handleRequest($reservationId,$start=null,$end=null)
   {
-    switch ($handleId) {
-      case 1://delete reservation
-
-        break;
-
-      case 2://make reservation
-        $this->makeReservation($roomId,$eventId)
-        break;
-
-      default:
-        // code...
-        break;
+    if((!isset($start))&&(!isset($end))){
+      $this->deleteReservation($reservationId);
+    } else{
+      $this->alterReservation($reservationId,$start,$end);
     }
+  }
+
+  /**
+  *
+  *
+  *
+  */
+  private function deleteReservation($resId)
+  {
+    DB::delete('delete * from Reservation where reservationId=?',[$resId]);
+  }
+
+  /**
+  * Alters the database entry of a reservation
+  *@param $reservationId
+  *
+  */
+  private function alterReservation($resId,$s,$e)
+  {
+    DB::update{'update'}
   }
 }
