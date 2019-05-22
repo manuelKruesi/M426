@@ -14,4 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('{handleId}/{roomId}/{eventId}/{reservationId?}','ReservationController@handleReservation');
+Route::get('{reservationId}/{start?}/{end?}','AlterReservation@handleRequest');
+Route::get('{roomId}/{eventId}/{start}/{end}','CreateReservation');
