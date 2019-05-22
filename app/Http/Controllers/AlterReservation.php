@@ -22,8 +22,8 @@ class AlterReservation extends Controller
   }
 
   /**
-  *
-  *
+  * Deletes the reservation from the database
+  *@param resId the reservation id
   *
   */
   private function deleteReservation($resId)
@@ -33,11 +33,12 @@ class AlterReservation extends Controller
 
   /**
   * Alters the database entry of a reservation
-  *@param $reservationId
-  *
+  *@param reservationId the reservationId
+  *@param startDate the new Startdate
+  *@param endDate the new Enddate
   */
   private function alterReservation($resId,$s,$e)
   {
-    DB::update{'update'}
+    DB::update('update Reservation set start= ? , end= ? , where reservationId = ?',[$s,$e,$resId]);
   }
 }
