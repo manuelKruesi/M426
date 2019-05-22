@@ -12,20 +12,31 @@ class ReservationController extends Controller
   * @param  int  $id
   * @return Response
   */
-  public function handleReservation($id)
+  public function handleReservation($handleId,$roomId,$eventId,$reservationId=null)
   {
-    switch ($id) {
-      case 1:
-        // code...
+    switch ($handleId) {
+      case 1://delete reservation
+
         break;
 
-      case 2:
-        // code
+      case 2://make reservation
+        $this->makeReservation($roomId,$eventId)
         break;
 
       default:
         // code...
         break;
     }
+  }
+
+  /**
+  *Handles the creation of Reservations
+  *
+  *@param int $room
+  *
+  */
+  private function makeReservation($roomId,$eventId)
+  {
+    DB::insert('insert into Reservation (eventId,roomId) values (?,?)',[$eventId,$roomId]);
   }
 }

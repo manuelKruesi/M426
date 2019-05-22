@@ -14,4 +14,4 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('type/{type}','ReservationController@handleReservation');
+Route::get('{handleId}/{roomId}/{eventId}/{reservationId?}','ReservationController@handleReservation');
