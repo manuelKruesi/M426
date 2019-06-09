@@ -13,8 +13,8 @@ class CreateEventsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('events');
-        Schema::create('events', function (Blueprint $table) {
+        Schema::dropIfExists('Event');
+        Schema::create('Event', function (Blueprint $table) {
             $table->bigIncrements('eventId');
             $table->string('title', 45);
             $table->text('description');

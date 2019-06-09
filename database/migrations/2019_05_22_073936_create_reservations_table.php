@@ -13,8 +13,8 @@ class CreateReservationsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('reservations');
-        Schema::create('reservations', function (Blueprint $table) {
+        Schema::dropIfExists('Reservation');
+        Schema::create('Reservation', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
             $table->integer('roomId')->references('roomId')->on('rooms');

@@ -13,8 +13,8 @@ class CreateRoomsTable extends Migration
      */
     public function up()
     {
-        Schema::dropIfExists('rooms');
-        Schema::create('rooms', function (Blueprint $table) {
+        Schema::dropIfExists('Room');
+        Schema::create('Room', function (Blueprint $table) {
             $table->bigIncrements('roomId');
             $table->string('name', 45);
             $table->text('description');
